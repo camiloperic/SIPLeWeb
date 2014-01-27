@@ -21,11 +21,13 @@ Ext.define('SInPLes.view.Main' ,{
 		pl.add('idProject', 3);
 		pl.add('idCitizen', 1);
 		var url = 'http://localhost:8080/DBAccessWS/services/DBAccessWSI';
-		SOAPClient.invoke(url, "getProjectView", pl, true, function(r){console.log('SOAP response', r);});
+		//SOAPClient.invoke(url, "getProjectView", pl, true, function(r){console.log('SOAP response', r);});
 		pl = new SOAPClientParameters();
                 pl.add('username', 'zedasilva');
                 pl.add('password', '0f98sh');
                 url = 'http://localhost:8080/IdentityWS/services/IdentityWSI';
+		//SOAPClient.username = 'client';
+		//SOAPClient.password = 'passwd';
                 SOAPClient.invoke(url, "login", pl, true, function(r){console.log('SOAP response', r);});
 		//
 		me.callParent(arguments);
